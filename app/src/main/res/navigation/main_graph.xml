@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/showListFragment">
+
+    <fragment
+        android:id="@+id/showListFragment"
+        android:name="io.github.pshegger.seriesdb.ui.showlist.ShowListFragment"
+        android:label="ShowListFragment"
+        tools:layout="@layout/fragment_show_list">
+        <action
+            android:id="@+id/actionToShowDetails"
+            app:destination="@id/showDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_close_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/showDetailFragment"
+        android:name="io.github.pshegger.seriesdb.ui.showdetail.ShowDetailFragment"
+        android:label="ShowDetailFragment"
+        tools:layout="@layout/fragment_show_detail">
+        <argument
+            android:name="showId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/actionToShowSeasonsFragment"
+            app:destination="@id/showSeasonsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/showSeasonsFragment"
+        android:name="io.github.pshegger.seriesdb.ui.showseasons.ShowSeasonsFragment"
+        android:label="ShowSeasonsFragment"
+        tools:layout="@layout/fragment_show_seasons">
+        <argument
+            android:name="showId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

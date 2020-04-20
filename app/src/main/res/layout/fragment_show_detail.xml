@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/showHeaderImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/showImageContainer"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/showHeaderImage"
+            app:layout_constraintDimensionRatio="42:59"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/showHeaderImage">
+
+            <ImageView
+                android:id="@+id/showImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#aa000000"
+            android:paddingStart="120dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/showHeaderImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/showImageContainer">
+
+            <TextView
+                android:id="@+id/showName"
+                style="@style/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                tools:text="Show Name" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/showImageContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/showImageContainer"
+            app:layout_constraintTop_toBottomOf="@id/showHeaderImage">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorAccent"
+                app:srcCompat="@drawable/ic_language" />
+
+            <TextView
+                android:id="@+id/showLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textAllCaps="true"
+                tools:text="Language" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/text_divider" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:tint="@color/colorAccent"
+                app:srcCompat="@drawable/ic_clock" />
+
+            <TextView
+                android:id="@+id/showRuntime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textAllCaps="true"
+                tools:text="Runtime" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            app:layout_constraintTop_toBottomOf="@id/showImageContainer">
+
+            <TextView
+                android:id="@+id/showDescription"
+                style="@style/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="This will be the description of the show. This could be long or short, it doesn't matter it should be displayed correctly." />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?attr/colorButtonNormal" />
+
+            <TextView
+                style="@style/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_genres_title" />
+
+            <TextView
+                android:id="@+id/showGenres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Genres Value" />
+
+            <TextView
+                style="@style/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_status_title" />
+
+            <TextView
+                android:id="@+id/showStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Status Value" />
+
+            <TextView
+                style="@style/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/detail_release_date_title" />
+
+            <TextView
+                android:id="@+id/showReleaseYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Release Year" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/colorButtonNormal" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/showSeasonsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/showSeasonsTitle"
+                    style="@style/body"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_seasons_count_title"
+                    app:layout_constraintEnd_toStartOf="@id/showSeasonsArrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/showSeasonsCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@id/showSeasonsArrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/showSeasonsTitle"
+                    tools:text="Season Count" />
+
+                <ImageView
+                    android:id="@+id/showSeasonsArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/colorAccent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_head_right" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
